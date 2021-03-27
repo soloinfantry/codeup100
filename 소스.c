@@ -568,7 +568,7 @@ int n70()
 int n71()
 {
 	int n;
-reload: //레이블은 콜론(:)으로 끝내고, 일반적으로 들여쓰기를 하지 않는다.
+reload:
 	scanf("%d", &n);
 	if (n == 0)
 		return 0;
@@ -576,5 +576,373 @@ reload: //레이블은 콜론(:)으로 끝내고, 일반적으로 들여쓰기를 하지 않는다.
 	{
 		printf("%d\n", n);
 		goto reload;
+	}
+}
+int n72()
+{
+	int n, m;
+	scanf("%d", &n);
+reget:
+	scanf("%d", &m);
+	printf("%d\n", m);
+	if (--n != 0) goto reget; 
+}
+int n73()
+{
+	int n=1;
+	while (n != 0)
+	{
+		scanf("%d", &n);
+		if (n == 0)
+			break;
+		printf("%d\n", n);
+	}
+}
+int n74()
+{
+		int n;
+	scanf("%d", &n);
+	while (1)
+	{
+		printf("%d\n", n);
+		n -= 1;
+		if (n == 0)
+			break;
+	}
+}
+int n75()
+{
+	int n;
+	scanf("%d", &n);
+	while (1)
+	{
+		n -= 1;
+		printf("%d\n", n);
+		if (n == 0)
+			break;
+	}
+}
+int n76()
+{
+	char n,a='a';
+	scanf("%c", &n);
+	while (1)
+	{
+		if (n == a)
+		{
+			printf("%c ", a);
+			break;
+		}
+		else
+			printf("%c ", a);
+		a += 1;
+	}
+}
+int n77()
+{
+	int i, n;
+	scanf("%d", &n);
+	for (i = 0; i <= n; i++)
+	{
+		printf("%d\n",i);
+	}
+}
+int n78()
+{
+	int sum = 0;
+	int i, n;
+	scanf("%d", &n);
+	for (i = 1; i <= n; i++)
+	{
+		if (i % 2 == 0) sum = sum + i;
+	}
+	printf("%d", sum);
+}
+int n79()
+{
+	char n;
+	while (1)
+	{
+		scanf("%c ", &n);
+		if (n == 'q')
+		{
+			printf("%c", n);
+			break;
+		}
+		else
+			printf("%c", n);
+		printf("\n");
+	}
+}
+int n80()
+{
+	int n,sum=0,i=0;
+	scanf("%d", &n);
+	for (i; sum < n; i++)
+	{
+		sum = i + sum;
+	}
+	printf("%d", i-1);
+}
+int n81()
+{
+	int n, i;
+	scanf("%d %d", &n ,&i);
+	for (int d=1;  d<= n; d++)
+	{
+		for (int dd=1; dd <= i; dd++)
+		{
+			printf("%d %d\n", d, dd);
+		}
+	}
+}
+int n82()
+{
+	int n;
+	scanf("%x", &n);
+	for (int i = 1; i <= 15; i++)
+	{
+		printf("%X*%X=%X\n", n, i, n * i);
+	}
+
+}
+int n83()
+{
+	int i,c;
+	scanf("%d", &c);
+	for (i = 1; i <= c; i++)
+	{
+		if (i % 3 == 0 ) printf("X ");
+		else printf("%d ", i);
+	}
+}
+int n84()
+{
+	int i, j, k, c = 0;
+	int r, g, b;
+	scanf("%d%d%d", &r, &g, &b);
+
+		for (i = 0; i < r; i++)
+			for (j = 0; j < g; j++)
+				for (k = 0; k < b; k++)
+				{
+					printf("%d %d %d\n", i, j, k);
+					c++;
+				}
+
+	printf("%d ", c);
+}
+int n85()
+{
+	int h,b,c,s;
+	double y;
+	scanf("%d %d %d %d", &h, &b, &c ,&s);
+	y = (double)h * b * c * s;
+	y = y / 8;
+	y = y / 1024;
+	y = y / 1024;
+	printf("%.01f MB", y);
+}
+int n86()
+{
+	int w,b,h;
+	double y;
+	scanf("%d %d %d", &w, &h, &b);
+	y = (double)h * b * w;
+	y = y / 8;
+	y = y / 1024;
+	y = y / 1024;
+	printf("%.02f MB", y);
+}
+int n87()
+{
+	int n, i, s = 0;
+	scanf("%d", &n);
+	for (i = 1; ; i++)
+	{
+		s += i;
+		if (s >= n)
+			break;
+	}
+	printf("%d", s);
+}
+int n88()
+{
+	int n,i;
+	scanf("%d", &n);
+		for (i = 1; i <= n; i++)
+		{
+			if (i % 3 == 0)
+				continue; 
+			printf("%d ", i);
+		}
+}
+int n89()
+{
+	int a, d, n;
+	scanf("%d %d %d",&a,&d, &n);
+		a = a + d * (n-1);
+	printf("%d", a);
+}
+int n90()
+{
+	long long int  a, d, n, sum = 1;
+	scanf("%lld %lld %lld", &a, &d, &n);
+	for (int i = 0; i < n; i++)
+	{
+		sum = sum * d;
+	}
+	if (d == 0)printf("0");
+	else {
+		a = a * (sum / d); printf("%lld", a);
+	}
+}
+int n91()
+{
+	long long int  a, m, p, s,sum=1;
+	scanf("%lld %lld %lld %lld", &a, &m, &p, &s);
+	if (s==1)
+		printf("%lld", a);
+	else {
+		for (int i = 1; i < s; i++)
+			a = a * m + p;
+		printf("%lld", a);
+	}
+}
+int n92()
+{
+	int day = 1,a,b,c;
+	scanf("%d %d %d", &a, &b, &c);
+	while (day % a != 0 || day % b != 0 || day % c != 0)
+		day++;
+	printf("%d", day);
+}
+int n93()
+{
+	int std[23], chk, num;
+	scanf("%d", &chk);
+	for (int i = 0; i < sizeof(std) / 4; i++)std[i] = 0;
+	for (int i = 0; i < chk; i++)
+	{
+		scanf("%d", &num);
+		std[num-1]++;
+	}
+	for (int i = 0; i < sizeof(std) / 4; i++)printf("%d ", std[i]);
+}
+int n94()
+{
+	int std[23], chk, num;
+	scanf("%d", &chk);
+	for (int i = 0; i < sizeof(std) / sizeof(int); i++)std[i] = 0;
+	int i = 0;
+	for (i; i < chk; i++)
+	{
+		scanf("%d", &num);
+		std[i] = num;
+	}
+	i--;
+	for ( i; i >= 0 ; i--)printf("%d ", std[i]);
+}
+int N95()
+{
+	int std[10001], chk, num;
+	scanf("%d", &chk);
+	for (int i = 0; i < sizeof(std) / sizeof(int); i++)std[i] = 0;
+	int i = 0,save=10000;
+	for (i; i < chk; i++)
+	{
+		scanf("%d", &num);
+		std[i] = num;
+		if (std[i] < save)save = std[i];
+	}
+	printf("%d", save);
+}
+int n96()
+{
+	int n, i, j, x, y;
+	int a[20][20];
+	scanf("%d", &n);
+	for (i = 1; i <= 19; i++)
+		for (j = 1; j <= 19; j++)
+			a[i][j] = 0;
+	for (i = 1; i <= n; i++)
+	{
+		scanf("%d %d", &x, &y);
+		a[x][y] = 1;
+	}
+	for (i = 1; i <= 19; i++)
+	{
+		for (j = 1; j <= 19; j++)
+		{
+			printf("%d ", a[i][j]);
+		}
+		printf("\n"); //
+	}
+}
+int N97()
+{
+	int n, i, j, x, y;
+	int a[20][20] ;
+	for (i = 1; i <= 19; i++)
+		for (j = 1; j <= 19; j++)
+			scanf("%d",&a[i][j]);
+	scanf("%d", &n);
+	for (i = 1; i <= n; i++)
+	{
+		scanf("%d %d", &x, &y);
+		for (j = 1; j <= 19; j++) 
+		{
+			if (a[x][j] == 0) a[x][j] = 1;
+			else a[x][j] = 0;
+		}
+		for (j = 1; j <= 19; j++) 
+		{
+			if (a[j][y] == 0) a[j][y] = 1;
+			else a[j][y] = 0;
+		}
+	}
+	for (i = 1; i <= 19; i++)
+	{
+		for (j = 1; j <= 19; j++)printf("%d ", a[i][j]);
+		printf("\n");
+	}
+}
+int n99()
+{
+	int n, i, j, x, y;
+	int a[11][11];
+	for (i = 1; i <= 10; i++)
+		for (j = 1; j <= 10; j++)
+			scanf("%d", &a[i][j]);
+	j = 2, i = 2;
+	for (i; i <= 10; i++)
+	{
+		for (j; j <= 10; j++)
+		{
+			if (a[i][j] == 0)a[i][j] = 9;
+			else if (a[i][j] == 1)
+			{
+				j--;
+				break;
+			}
+			else if (a[i][j] == 2)
+				break;
+		}
+		if (a[i][j] == 0)a[i][j] = 9;
+		else if (a[i][j] == 1)
+		{
+			continue;
+		}
+		else if (a[i][j] == 2)
+		{
+			a[i][j] = 9;
+			break;
+		}
+	}
+
+	for (i = 1; i <= 10; i++)  //출력문
+	{
+		for (j = 1; j <= 10; j++)printf("%d ",a[i][j]);
+		printf("\n");
 	}
 }
